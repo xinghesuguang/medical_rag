@@ -1,0 +1,42 @@
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.env
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Model files (optional - uncomment if models are large)
+# *.bin
+# *.safetensors
+# *.pt
+# *.pth
+
+# Log files
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Data files (optional - uncomment if data is sensitive)
+# data/
+# *.json
+# *.csv
+# *.txt

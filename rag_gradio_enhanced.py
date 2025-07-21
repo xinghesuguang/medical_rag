@@ -55,7 +55,7 @@ class EnhancedRAGSystem:
             # 加载嵌入模型 - 使用DashScope
             # self.embeddings = DashScopeEmbeddings(
             #     model="text-embedding-v2",
-            #     dashscope_api_key="sk-8f7884619fd6405f9c90fe16733c597e"
+            #     dashscope_api_key=""
             # )
             
             # 加载嵌入模型 - 使用本地bge-large-zh
