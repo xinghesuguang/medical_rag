@@ -1,0 +1,49 @@
+### model
+model_name_or_path: /root/autodl-tmp/Hugging-Face/models/DeepSeek-R1-Distill-Qwen-7B
+trust_remote_code: true
+
+
+### method
+stage: sft
+do_train: true
+finetuning_type: lora
+lora_rank: 8
+lora_target: all
+deepspeed: examples/deepspeed/ds_z2_config.json # choices: [ds_z0_config.json, ds_z2_config.json, ds_z3_config.json]
+
+### dataset
+dataset: medical_train_zh_top100k
+template: deepseekr1
+cutoff_len: 2048
+max_samples: 100000
+overwrite_cache: true
+preprocessing_num_workers: 80
+dataloader_num_workers: 25
+
+### output
+output_dir: saves/DeepSeek-R1-Distill-Qwen-7B/lora/sft-01
+logging_steps: 50
+save_steps: 500
+plot_loss: true
+overwrite_output_dir: true
+save_only_model: false
+report_to: none  # choices: [none, wandb, tensorboard, swanlab, mlflow]
+
+### train
+per_device_train_batch_size: 3
+gradient_accumulation_steps: 5
+learning_rate: 2.0e-4
+num_train_epochs: 2.5
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+bf16: true
+ddp_timeout: 180000000
+resume_from_checkpoint: null
+gradient_checkpointing: true 
+
+### eval
+# eval_dataset: alpaca_en_demo
+# val_size: 0.1
+# per_device_eval_batch_size: 1
+# eval_strategy: steps
+# eval_steps: 500
